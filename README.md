@@ -11,7 +11,7 @@ This project is a lightweight email automation tool built using Django, integrat
 - n8n automation to monitor the sheet and send emails.
 - Easy deployment and extensibility.
 
----
 
-## 📂 Project Structure
+
+
 
