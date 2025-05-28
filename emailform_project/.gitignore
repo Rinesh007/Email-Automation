@@ -1,0 +1,12 @@
+# Ignore Python bytecode and DB
+__pycache__/
+*.pyc
+db.sqlite3
+
+# Ignore secrets
+credentials.json
+.env
+
+# Ignore VSCode and OS-specific files
+.vscode/
+.DS_Store

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sign Up for Email Updates</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Google Fonts for a modern look -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background: #f6f8fa;
+        font-family: "Roboto", Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .form-container {
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        padding: 2.5rem 2rem;
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+      }
+      h2 {
+        margin-bottom: 1.5rem;
+        color: #333;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+      input[type="email"] {
+        padding: 0.75rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+      }
+      button {
+        background: #007bff;
+        color: #fff;
+        padding: 0.75rem;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      button:hover {
+        background: #0056b3;
+      }
+      .error {
+        color: #c00;
+        margin-bottom: 1rem;
+      }
+      .footer {
+        margin-top: 2rem;
+        color: #888;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h2>Sign Up for Updates</h2>
+      {% if error %}
+      <div class="error">{{ error }}</div>
+      {% endif %}
+      <form method="post">
+        {% csrf_token %}
+        <input
+          type="email"
+          name="email"
+          placeholder="Enter your email address"
+          required
+        />
+        <button type="submit">Subscribe</button>
+      </form>
+      <div class="footer">We respect your privacy. No spam ever.</div>
+    </div>
+  </body>
+</html>
